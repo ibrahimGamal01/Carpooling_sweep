@@ -1,0 +1,302 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: #151515;
+  color: #fff;
+  background-image: url("src/UN_Campus.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* height: auto; */
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 15%;
+  background: transparent;
+  transition: all 0.4s ease-in-out;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 700;
+  cursor: pointer;
+  /* text-indent: -9999px; */
+  vertical-align: middle;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+}
+
+.logo-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 70px;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+
+.nav-list a:hover {
+  color: #00c9e0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  color: #fff;
+  background: #007be0;
+  border-radius: 30px;
+  font-size: 15px;
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+.btn:hover {
+  border: 4px solid #00c9e0;
+  background: transparent;
+  color: #00c9e0;
+  font-weight: 700;
+  font-size: large;
+  cursor: pointer;
+}
+
+#menu-icon {
+  color: #fff;
+  font-size: 38px;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+section {
+  padding: 0 15%;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .container {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  margin: 20px auto;
+  height: 90vh;
+  width: 100%;
+} */
+
+.car-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 70px;
+    height: 70px;
+    z-index: 1001;
+    
+  }
+  
+
+.sidebar-container {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  height: fit-content;
+  z-index: 1;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: rgba(67, 145, 223, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: max-width 0.4s;
+  overflow-y: auto;
+}
+
+
+.sidebar {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar form {
+  margin-top: 20px;
+}
+
+.sidebar label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sidebar input {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 25px;
+  padding: 7px;
+  border: 1px solid #ccc;
+  text-decoration: solid;
+  border-radius: 30px;
+}
+
+.main-content {
+  flex: 3;
+  /* padding: 20px; */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  position: relative;
+}
+
+.map-container {
+  height: calc(100vh - 100px);
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* padding: 10%; */
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .map-container {
+    height: calc(100vh - 250px);
+  }
+}
+
+@media (max-width: 750px) {
+  .m-text h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1350px) {
+  nav {
+    padding: 20px 5%;
+  }
+
+  section {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 950px) {
+  .m-text h1 {
+    font-size: 70px;
+  }
+
+  .m-text p {
+    font-size: 22px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .btn {
+    padding: 9px 27px;
+  }
+  .map-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 860px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: -800px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #0065e0;
+    text-align: left;
+    transition: all 0.5s ease;
+  }
+
+  .logo {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+
+  .nav-list a {
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    border-left: 3px solid #000000;
+    display: block;
+  }
+
+  .nav-list a:hover {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#06877a5f),
+      to(#201eae5f)
+    );
+    color: #000000;
+  }
+
+  .nav-list.open {
+    top: 100%;
+  }
+}

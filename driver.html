@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carpooling UNFCCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="./style.css">
+
+
+    <link rel="icon" type="image/png" href="src/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="src/favicon/android-chrome-512x512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="src/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="src/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="src/favicon/favicon-32x32.png" sizes="32x32">
+
+</head>
+
+
+<body>
+
+    <body>
+        <nav>
+            <a href="#" class="logo"><img src="src/unfccc_logo.png" alt="Logo" class="logo-image"></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="map.html">Map</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+            <div class="sidebar-container">
+                <img src="src/car_icon.svg" alt="Car Icon" class="car-icon">
+                <div class="sidebar">
+                    <h1 style="font-family: 'Arial', sans-serif; font-size: 45px;"> Create a Ride</h1>
+                    <!-- <p style="font-family: 'Arial', sans-serif; font-size: 10px;">Fill out the form below to create a ride.</p> -->
+                    <form id="create-ride-form" action="php/create_ride.php" method="POST">
+                        <!-- <input type="hidden" name="driver" value="Driver Name"> -->
+
+                        <label for="pickupLocation" style="font-family: 'Arial', sans-serif; font-size: 20px;">Pickup
+                            Location</label>
+                        <input type="text" id="pickupLocation" name="pickupLocation"
+                            placeholder="Enter pickup location">
+
+                        <label for="dropoffLocation" style="font-family: 'Arial', sans-serif; font-size: 20px;">Drop-off
+                            Location</label>
+                        <input type="text" id="dropoffLocation" name="dropoffLocation"
+                            placeholder="Enter drop-off location">
+
+                        <label for="seats" style="font-family: 'Arial', sans-serif; font-size: 20px;">Seats</label>
+                        <input type="number" id="seats" name="seats" placeholder="Number of Available Seats" min="1">
+
+                        <button type="submit" class="btn">Create Ride</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="main-content">
+            <div id="map" class="map-container"></div>
+            <!-- <div id="ride-details"></div> -->
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script>
+    </script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

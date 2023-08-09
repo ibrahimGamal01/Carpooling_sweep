@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carpooling UNFCCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="icon" type="image/png" href="src/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="src/favicon/android-chrome-512x512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="src/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="src/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="src/favicon/favicon-32x32.png" sizes="32x32">
+
+    <style>
+        body {
+            background-image: url(src/unfccc_background.jpg);
+        }
+
+        .logo {
+            display: block;
+            margin: 10px;
+        }
+
+        .nav-list {
+            /* ... Other navigation styles ... */
+            margin-top: 5px;
+            /* Create spacing below the logo */
+        }
+
+        .nav-list li a {
+            color: rgb(0, 0, 0);
+        }
+</style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo"><img src="src/unfccc_logo.png" alt="Logo" class="logo-image"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="map.html">Map</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

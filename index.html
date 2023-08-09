@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carpooling UNFCCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="icon" type="image/png" href="src/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="src/favicon/android-chrome-512x512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="src/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="src/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="src/favicon/favicon-32x32.png" sizes="32x32">
+
+    <style>
+        body {
+            background-image: url(src/unfccc_background.jpg);
+        }
+
+        .logo {
+            display: block;
+            margin: 10px;
+        }
+
+        .nav-list {
+
+            margin-top: 5px;
+        }
+
+        .nav-list li a {
+            color: rgb(0, 0, 0);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            background-color: #3e9bc699;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .btn:hover {
+            background: -webkit-gradient(linear,
+                    left top,
+                    right top,
+                    from(#06877a83),
+                    to(#201eae6c));
+            color: #ffffff;
+        }
+
+        .inpage {
+            display: inline-block;
+        }
+
+        @media (max-width: 950px) {
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @property --rotate {
+            syntax: "<angle>";
+            initial-value: 132deg;
+            inherits: false;
+        }
+
+        :root {
+            --card-height: 40vh;
+            --card-width: calc(var(--card-height) / 1.5);
+            --forest-color: #228B22;
+            /* Forest green */
+            --sky-color: #87CEEB;
+            /* Sky blue */
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            background: linear-gradient(var(--rotate),
+                    var(--forest-color),
+                    #3c67e3 43%,
+                    var(--sky-color));
+            width: var(--card-width);
+            height: var(--card-height);
+            padding: 3px;
+            position: relative;
+            border-radius: 6px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            font-size: 1.5em;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            font-family: cursive;
+            transition: transform 5s linear;
+            /* Slower movement */
+        }
+
+        .btn:hover {
+            color: rgb(255, 255, 255);
+            transform: rotate(10deg);
+            /* Adjust rotation for hovering */
+            transition: color 1s, transform 2s linear;
+            /* Add transform transition */
+        }
+
+        .btn:hover:before,
+        .btn:hover:after {
+            animation: none;
+            opacity: 0;
+        }
+
+        .btn::before {
+            content: "";
+            width: 104%;
+            height: 102%;
+            border-radius: 8px;
+            background-image: linear-gradient(var(--rotate),
+                    var(--forest-color),
+                    #3c67e3 43%,
+                    var(--sky-color));
+            position: absolute;
+            z-index: -1;
+            top: -1%;
+            left: -2%;
+            animation: spin 5s linear infinite;
+        }
+
+        .btn::after {
+            position: absolute;
+            content: "";
+            top: calc(var(--card-height) / 6);
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            transform: scale(0.8);
+            filter: blur(calc(var(--card-height) / 6));
+            background-image: linear-gradient(var(--rotate),
+                    var(--forest-color),
+                    #3c67e3 43%,
+                    var(--sky-color));
+            opacity: 1;
+            transition: opacity 0.5s;
+            animation: spin 5s linear infinite;
+            /* Slower rotation */
+        }
+
+        @keyframes spin {
+            0% {
+                --rotate: 0deg;
+            }
+
+            100% {
+                --rotate: 360deg;
+            }
+        }
+
+        a {
+            color: var(--forest-color);
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            margin-top: 2rem;
+        }
+
+        .car-icon {
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo"><img src="src/unfccc_logo.png" alt="Logo" class="logo-image"></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="map.html">Map</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="btn-container">
+            <a href="passenger.html" class="btn inpage">I'm a Passenger <img src="src/car-seat-with-seatbelt.svg"
+                    alt="Car Icon" class="car-icon"></a>
+
+            <a href="driver.html" class="btn inpage">I'm a Driver <img src="src/nice-car.svg" alt="Car Icon"
+                    class="car-icon"></a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
